@@ -54,15 +54,15 @@
         "psr-4": {
             "App\\": "app/"
         },
-        "files": []
+        "files": [
+            "app/Components/Functions.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
             "HyperfTest\\": "./test/"
         },
-        "files": [
-            "app/Components/Functions.php"
-        ]
+        "files": []
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
