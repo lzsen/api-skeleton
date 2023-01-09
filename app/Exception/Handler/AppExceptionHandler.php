@@ -54,7 +54,7 @@ class AppExceptionHandler extends ExceptionHandler
         }
 
         // 记录日志
-        $this->addLogger($throwable, true);
+        $this->addLogger($throwable, false);
         // 其它错误
         return $this->responseApiMessage(StatusCode::ERR_SERVER);
     }
