@@ -9,13 +9,11 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
-
 namespace App\Controller;
 
 use App\Components\Http\Request;
 use App\Components\Http\Response;
 use Hyperf\Di\Annotation\Inject;
-
 use Psr\Container\ContainerInterface;
 
 abstract class AbstractController

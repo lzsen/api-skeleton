@@ -1,31 +1,31 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace App\Components\Http;
 
-use App\Constants\StatusCode;
+use App\Constants\ApiCodeConstant;
 use Hyperf\HttpServer\Response as AbstractResponse;
-use Psr\Container\ContainerInterface;
 use Psr\Http\Message\ResponseInterface;
 
 class Response extends AbstractResponse
 {
-
-    public function __construct(protected ContainerInterface $container)
-    {
-    }
-
     /**
-     * api接口响应
-     *
-     * @param  mixed|null  $data
-     * @param  string  $message
-     * @return \Psr\Http\Message\ResponseInterface
+     * api接口响应.
      */
     public function success(mixed $data = null, string $message = 'success'): ResponseInterface
     {
         $response = [
-            'code'    => StatusCode::SUCCESS,
-            'message' => $message ?? StatusCode::getMessage(StatusCode::SUCCESS),
+            'code'    => ApiCodeConstant::SUCCESS,
+            'message' => $message ?? ApiCodeConstant::getMessage(ApiCodeConstant::SUCCESS),
             'data'    => $data,
         ];
 
@@ -33,12 +33,7 @@ class Response extends AbstractResponse
     }
 
     /**
-     * api接口响应
-     *
-     * @param  int  $code
-     * @param  string  $message
-     * @param  mixed|null  $data
-     * @return \Psr\Http\Message\ResponseInterface
+     * api接口响应.
      */
     public function error(int $code = 0, string $message = 'error', mixed $data = null): ResponseInterface
     {
@@ -49,5 +44,4 @@ class Response extends AbstractResponse
         ];
         return $this->json($response);
     }
-
 }

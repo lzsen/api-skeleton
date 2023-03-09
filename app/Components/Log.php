@@ -1,5 +1,15 @@
 <?php
 
+declare(strict_types=1);
+/**
+ * This file is part of Hyperf.
+ *
+ * @link     https://www.hyperf.io
+ * @document https://hyperf.wiki
+ * @contact  group@hyperf.io
+ * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
+ */
+
 namespace App\Components;
 
 use Hyperf\Contract\StdoutLoggerInterface;
@@ -18,10 +28,8 @@ use Psr\Log\LoggerInterface;
 class Log
 {
     /**
-     * 获取日志实例
+     * 获取日志实例.
      *
-     * @param  string  $name
-     * @param  array  $arguments
      * @return \Hyperf\Contract\StdoutLoggerInterface|mixed|\Psr\Log\LoggerInterface
      * @throws \Psr\Container\ContainerExceptionInterface
      * @throws \Psr\Container\NotFoundExceptionInterface
@@ -35,10 +43,8 @@ class Log
             }
             // 第三方实现的
             return ApplicationContext::getContainer()->get(LoggerFactory::class)->get($name, $group);
-        } else {
-            // 框架实现的
-            return ApplicationContext::getContainer()->get(StdoutLoggerInterface::class);
         }
-
+        // 框架实现的
+        return ApplicationContext::getContainer()->get(StdoutLoggerInterface::class);
     }
 }
