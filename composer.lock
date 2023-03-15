@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "521dfda103aff0d24a41715c87ff973c",
+    "content-hash": "31c10d1984e6024079e621a63d46025e",
     "packages": [
         {
             "name": "doctrine/deprecations",
@@ -5625,6 +5625,59 @@
                 "source": "https://github.com/hyperf/testing/tree/v3.0.9"
             },
             "time": "2023-02-27T02:49:32+00:00"
+        },
+        {
+            "name": "hyperf/watcher",
+            "version": "v3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hyperf/watcher.git",
+                "reference": "2fa0770171d3e1d7576f3c66a9cbeb479fe1daca"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hyperf/watcher/zipball/2fa0770171d3e1d7576f3c66a9cbeb479fe1daca",
+                "reference": "2fa0770171d3e1d7576f3c66a9cbeb479fe1daca",
+                "shasum": ""
+            },
+            "require": {
+                "ext-posix": "*",
+                "hyperf/command": "~3.0.0",
+                "hyperf/di": "~3.0.0",
+                "hyperf/framework": "~3.0.0",
+                "php": ">=8.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "3.0-dev"
+                },
+                "hyperf": {
+                    "config": "Hyperf\\Watcher\\ConfigProvider"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/Functions.php"
+                ],
+                "psr-4": {
+                    "Hyperf\\Watcher\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Hot reload watcher for Hyperf",
+            "keywords": [
+                "hyperf",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/hyperf/watcher/issues",
+                "source": "https://github.com/hyperf/watcher/tree/v3.0.0"
+            },
+            "time": "2022-12-27T02:58:03+00:00"
         },
         {
             "name": "mockery/mockery",
