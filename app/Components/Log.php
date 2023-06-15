@@ -28,13 +28,9 @@ use Psr\Log\LoggerInterface;
 class Log
 {
     /**
-     * 获取日志实例.
-     *
-     * @return \Hyperf\Contract\StdoutLoggerInterface|mixed|\Psr\Log\LoggerInterface
-     * @throws \Psr\Container\ContainerExceptionInterface
-     * @throws \Psr\Container\NotFoundExceptionInterface
+     * 获取日志实例
      */
-    public static function __callStatic(string $name, array $arguments): mixed
+    public static function __callStatic($name, $arguments): mixed
     {
         if (is_prod()) {
             $group = 'default';

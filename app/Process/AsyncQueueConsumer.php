@@ -23,16 +23,12 @@ class AsyncQueueConsumer extends ConsumerProcess
 {
     public function handle(): void
     {
-        try {
-            $redis = $this->container->get(RedisFactory::class)->get($this->config['redis']['pool'] ?? 'default');
-            $redis->ping();
-            parent::handle(); // $this->driver->consume();
-        } catch (InvalidRedisProxyException $e) {
-            Log::queue()->error(sprintf('[AsyncQueueConsumer]:%s', 'redis 配置不正确'));
-        } catch (\Throwable $e) {
-            Log::queue()->error(sprintf('[AsyncQueueConsumer]:%s', $e->getMessage()));
-        }
 
+    }
+
+    public function isEnable($server): bool
+    {
+        return false;
     }
 
 }
